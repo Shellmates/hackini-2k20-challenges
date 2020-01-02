@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  ctf:
+    build: .
+    ports:
+      - '7331:1337'
+    image: hackini/misc/bequickorbedead:v8
+ 
