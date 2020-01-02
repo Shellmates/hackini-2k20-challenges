@@ -5,5 +5,4 @@ services:
     build: .
     ports:
       - '8080:80'
-    image: hackini/stego/lights:v8
- 
+    image: hackini/stego/lights
