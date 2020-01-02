@@ -8,4 +8,5 @@
   "type": "dynamic",
   "value": "500",
   "flag": "shellmates{4lR1g|-|t_@lriGh7_1_tH1nK_y0u`R3_f4st_en0ugh}"
-}```
+}
+```
