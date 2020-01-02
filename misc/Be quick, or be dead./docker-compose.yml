@@ -5,5 +5,4 @@ services:
     build: .
     ports:
       - '7331:1337'
-    image: hackini/misc/bequickorbedead:v8
- 
+    image: hackini/misc/bequickorbedead
