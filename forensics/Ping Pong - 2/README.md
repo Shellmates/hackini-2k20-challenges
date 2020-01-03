@@ -7,6 +7,6 @@
   "state": "visible",
   "type": "dynamic",
   "value": "500",
-  "flag": "shellmates{t1m3_t0_l1v3_th3_pR3seNt_4nD_f0rG3T_4b0uT_y0uR_p4St}"
+  "flag": "shellmates{t1m3_t0_l1v3}"
 }
 ```
