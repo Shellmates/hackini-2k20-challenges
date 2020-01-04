@@ -1,0 +1,52 @@
+class String
+	def as_number
+		self.each_codepoint.map{|c| c.to_s(16).rjust(2,?0)}.join.to_i(16);
+	end
+end
+
+class Integer
+	def as_string
+		x = self;
+		s = '';
+		while x != 0
+			s << (x & 0xff).chr;
+			x >>= 8;
+		end
+		s.reverse;
+	end
+end
+
+def nthroot(n, a, precision = 1e-1024)
+  x = a
+  begin
+    prev = x
+    x = ((n - 1) * prev + a / (prev ** (n - 1))) / n
+  end while (prev - x).abs > precision
+ x
+end
+require'openssl'
+class OpenSSL::BN
+	def next_prime
+		x = self + 1;
+		x += 1 until x.prime_fasttest?;
+		x;
+	end
+	def prev_prime
+		x = self - 1;
+		x -= 1 until x.prime_fasttest?;
+		x;
+	end
+end
+
+N = 166253830848460102756591308656542128237880784786579221607192843398410922531068625260787120053016633180787267004642503604722578177921193194021721703709402769166285265864784646140395470760800703729207412929261378327101980175341029051045468949415759250259715651999708324002910070022973057868789185357081254743741
+e = 65537
+c = 79568664955919586043761139654092114989770656979486230855079085329288000493345323224115787659447681360068498191206884922621741035268546450591946672253868759242693009384626775461231118171185359230388299677696128934047316603711378929155546856775396483044015355312064711695841792328282482898702439578688957327927
+
+x = nthroot(2, N).to_bn;
+P = x.next_prime;
+Q = x.prev_prime;
+
+phi = (P-1)*(Q-1)
+d = e.to_bn.mod_inverse(phi).to_i
+
+puts c.to_bn.mod_exp(d, N).to_i.as_string
