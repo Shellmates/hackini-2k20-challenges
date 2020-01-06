@@ -1,0 +1,19 @@
+<?php
+...
+$login = mysqli_real_escape_string($conn,$_POST['login']);
+$password = $_POST['password'];
+$sql = "SELECT * from users WHERE login='$login' AND pass=md5('$password')";
+
+...
+
+?>
+
+<html>
+
+...
+
+It's enough for you, believe me !
+
+...
+
+</html>
