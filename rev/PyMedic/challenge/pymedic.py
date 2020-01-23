@@ -3,7 +3,7 @@ from __future__ import print_function
 from binascii import unhexlify as deteriorating
 
 
-ANTIPYRETIC = '7369676f686867736d7a713a53453a7b234e54277a766f484f29687f6f60'
+ANTIPYRETIC = '7369676f686867736d7a714253453a5b754e54277a566f484f29685f6f60'
 
 X = (enumerate, bytes, input, print)
 stromuhr, torsion, incisor, psychiatry = X
