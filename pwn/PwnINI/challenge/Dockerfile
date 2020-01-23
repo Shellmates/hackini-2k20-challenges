@@ -15,7 +15,8 @@ COPY ./PwnINI ./
 RUN chown -R root:PwnINI /home/PwnINI && \
     chmod 750 /home/PwnINI && \
     chown root:PwnINI /home/PwnINI/flag.txt && \
-    chmod 440 /home/PwnINI/flag.txt
+    chmod 440 /home/PwnINI/flag.txt && \
+    chmod 555 /home/PwnINI/PwnINI
 
 EXPOSE 8000
 

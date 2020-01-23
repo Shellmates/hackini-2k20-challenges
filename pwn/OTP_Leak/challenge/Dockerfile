@@ -17,7 +17,8 @@ ENV ONE_TIME_PAD=YOIQsSNT2tSO5GMUnApdvnegKyYyUG52
 RUN chown -R root:CryptoBoy /home/CryptoBoy && \
     chmod 750 /home/CryptoBoy && \
     chown root:CryptoBoy /home/CryptoBoy/flag.txt && \
-    chmod 440 /home/CryptoBoy/flag.txt
+    chmod 440 /home/CryptoBoy/flag.txt && \
+    chmod 555 /home/CryptoBoy/otp_leak
 
 EXPOSE 8000
 
