@@ -1,8 +1,7 @@
-version: '2'
+version: '3'
 
 services:
   ctf:
-    build: .
+    image: registry.shellmates.club/bequick
     ports:
-      - '7331:1337'
-    image: hackini/misc/bequickorbedead
+      - '4402:1337'

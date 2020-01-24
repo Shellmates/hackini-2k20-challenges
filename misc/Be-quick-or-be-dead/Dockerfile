@@ -1,5 +1,5 @@
 # Origin image
-FROM ubuntu:latest
+FROM ubuntu:18.04
 
 # Meta information
 MAINTAINER Zouahi Hafidh "gh_zouahi@esi.dz"
