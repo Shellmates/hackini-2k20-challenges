@@ -45,6 +45,14 @@ INSERT INTO `users` (`id`, `login`, `pass`) VALUES
 (2, 'guest', '084e0343a0486ff05530df6c705c8bb4');
 COMMIT;
 
+--
+-- Create new user and grant only SELECT privilege
+--
+DROP USER 'shellmates'@'%';
+FLUSH PRIVILEGES;
+CREATE USER 'shellmates'@'%' IDENTIFIED BY 'My_Sup3r_Secr3t_P@$$word';
+GRANT SELECT ON wargame.users TO 'shellmates'@'%';
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

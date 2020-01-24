@@ -1,3 +1,8 @@
+<?php
+	if (session_status() == PHP_SESSION_NONE) {
+		session_start();
+	}
+?>
 <html>
 <head>
 <title> Admin Cpanel </title>
@@ -27,9 +32,6 @@ document.form1.submit();
 </script>
 
 <?php
-	if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-	}
 	error_log(0);
 	error_reporting(0);
 	require_once("../dbconf.php");

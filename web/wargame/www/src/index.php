@@ -1,3 +1,8 @@
+<?php
+	if (session_status() == PHP_SESSION_NONE) {
+		session_start();
+	}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,10 +23,6 @@
 	
 	
 <?php
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-
 error_reporting(0);
 error_log(0);
 require_once('dbconf.php');
