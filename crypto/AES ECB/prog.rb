@@ -2,9 +2,11 @@ require'openssl';
 require'socket';
 require'base64';
 
-SECRET_KEY = 16.times.map{ rand(0..255).chr }.join
-FLAG = File.read('flag.txt')
+FLAG_PATH = 'flag.txt';
 
+SECRET_KEY = 16.times.map{ rand(0..255).chr }.join
+
+FLAG = File.read FLAG_PATH;
 
 
 banner = "\e[1;92;49m" + <<BANNER
@@ -28,7 +30,6 @@ PROMPT = "=> ";
 
 server = TCPServer.open(8000);
 
-puts "[+] RUNNING WITH flag = #{FLAG}";
 loop{
 	client = server.accept;
 	#sock_domain, remote_port, remote_hostname, remote_ip = client.peeraddr;
@@ -46,7 +47,6 @@ loop{
 			aes.encrypt;
 			aes.key = SECRET_KEY;
 			input_debug = input + FLAG
-			puts "[+] bloc1 = #{input_debug[0,16]}\n[+] bloc2 = #{input_debug[16,16]}\n[+] bloc3 = #{input_debug[32,16]}";
 			aes_encrypted = aes.update(input + FLAG) + aes.final;
 			client.puts Base64.encode64(aes_encrypted).gsub(/\s+/,'');
 			client.flush;
