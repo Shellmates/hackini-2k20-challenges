@@ -4,7 +4,7 @@ require'base64';
 
 SECRET_KEY = 16.times.map{ rand(0..255).chr }.join
 FLAG = File.read('flag.txt')
-#"shellmates{ECB_0ne_by7e_4t_4_t1me_4ttack_;)}"
+
 
 
 banner = "\e[1;92;49m" + <<BANNER
