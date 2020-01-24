@@ -1,0 +1,18 @@
+version: '3'
+services:
+  database:
+    build: ./database/
+    environment:
+      MYSQL_DATABASE: "sqli_baby_omega"
+      MYSQL_USER: "omega_coder"
+      MYSQL_PASSWORD: "omega_coder_was_here_1337"
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+  web:
+    build: ./www/
+    ports:
+     - "4444:80"
+    volumes:
+      - ./www/source:/var/www/html
+    links:
+      - database
