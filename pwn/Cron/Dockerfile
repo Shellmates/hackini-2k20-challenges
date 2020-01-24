@@ -8,7 +8,7 @@ MAINTAINER Zouahi Hafidh "gh_zouahi@esi.dz"
 RUN apt-get update
 
 # Setup challenge requirements
-RUN apt-get install -y socat
+RUN apt-get install -y openssh-server
 RUN apt-get install -y cron
 RUN apt-get install -y python3
 
@@ -27,11 +27,8 @@ COPY --chown=sysadmin:sysadmin crontab.sysadmin .
 COPY --chown=sysadmin:sysadmin flag.txt .
 RUN chmod 400 flag.txt
 
-WORKDIR /home/ctf
-COPY --chown=ctf:ctf runserver.sh .
-
 # Expose challenge's port
-EXPOSE 7777
+EXPOSE 22
 
 # Start the listener
-ENTRYPOINT service cron start && su sysadmin -c "crontab /home/sysadmin/crontab.sysadmin" && su ctf -c /home/ctf/runserver.sh
+ENTRYPOINT service cron start && service ssh start && su sysadmin -c "crontab /home/sysadmin/crontab.sysadmin" && /bin/bash
