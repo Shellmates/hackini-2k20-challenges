@@ -32,6 +32,7 @@ error_reporting(0);
         <div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
+                <a href="?source">Show Source Code</a>
 				<form method="GET" action="index.php">
 					<div class="input-group">
 					  <input type="text" name="omega" class="form-control" placeholder="Babe" aria-describedby="basic-addon2">
