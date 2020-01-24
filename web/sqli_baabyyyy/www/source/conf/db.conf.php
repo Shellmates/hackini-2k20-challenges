@@ -1,5 +1,5 @@
 <?php
-  $servername = 'database';
+  $servername = 'sqli_baabyyyy_db';
   $username  = 'omega_coder';
   $password = 'omega_coder_was_here_1337';
   $database = 'sqli_baby_omega';

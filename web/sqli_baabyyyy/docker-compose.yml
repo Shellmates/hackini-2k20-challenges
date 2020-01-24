@@ -1,18 +1,22 @@
-version: '3'
+version: "3"
 services:
-  database:
-    build: ./database/
+  sqli_baabyyyy_db:
+    image: registry.shellmates.club/sqli_baabyyyy_db
     environment:
       MYSQL_DATABASE: "sqli_baby_omega"
       MYSQL_USER: "omega_coder"
       MYSQL_PASSWORD: "omega_coder_was_here_1337"
       MYSQL_ROOT_PASSWORD: "root"
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-  web:
-    build: ./www/
+    networks:
+      sqli_baabyyyy_network:
+
+  sqli_baabyyyy_web:
+    image: registry.shellmates.club/sqli_baabyyyy_web
     ports:
-     - "4444:80"
-    volumes:
-      - ./www/source:/var/www/html
-    links:
-      - database
+      - "2202:80"
+    networks:
+      sqli_baabyyyy_network:
+
+networks:
+  sqli_baabyyyy_network:
