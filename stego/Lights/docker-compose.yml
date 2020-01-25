@@ -1,8 +1,18 @@
-version: '2'
+version: "3"
 
 services:
-  web:
-    build: .
+  light:
+    image: registy.shellmates.club/lights
     ports:
-      - '8080:80'
-    image: hackini/stego/lights
+      - '5501:80'
+    networks:
+      light_network:
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          memory: 256M
+
+networks:
+  light_network:
+  
