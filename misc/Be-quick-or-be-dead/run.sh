@@ -1,2 +1,2 @@
 #!/bin/bash
-timeout 1 ./bequick.py
+timeout 3 ./bequick.py
