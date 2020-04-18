@@ -1,19 +1,26 @@
-version: '3'
+version: '2'
+
 services:
-  database:
-    build: ./bdd/
+  db:
+    build: ./db
+    image: web/wargame_db
+    container_name: wargame_db
     environment:
       MYSQL_DATABASE: 'wargame'
       MYSQL_USER: 'shellmates'
       MYSQL_PASSWORD: 'My_Sup3r_Secr3t_P@$$word'
       MYSQL_ROOT_PASSWORD: 'F91a9Mh2nWkDwtsL4NctLDKCBvqK8ss5'
-    expose:
-      - '3306'
+    mem_limit: 250m
+
   web:
-    build: ./www/
+    build: ./www
+    image: web/wargame_www
+    container_name: wargame_www
     ports:
-     - "8080:80"
+     - "8082:80"
     volumes:
       - ./www/src:/var/www/html
     depends_on:
-      - database
+      - db
+    mem_limit: 50m
+    shm_size: 64m

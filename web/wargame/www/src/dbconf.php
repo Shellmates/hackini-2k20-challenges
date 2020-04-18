@@ -1,6 +1,6 @@
 <?php
 error_reporting(0);
-$servername = 'database';
+$servername = 'db';
 $username = 'shellmates';
 $password = 'My_Sup3r_Secr3t_P@$$word';
 $dbname = 'wargame';
